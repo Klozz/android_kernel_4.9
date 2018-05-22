@@ -19,8 +19,9 @@
 #include <linux/iommu.h>
 #include <linux/of.h>
 #include <linux/of_address.h>
-#include <linux/clk/msm-clk.h>
+#include <linux/clk/qcom.h>
 #include <linux/module.h>
+
 #include <linux/dma-mapping.h>
 #include <linux/dma-buf.h>
 #include <linux/of_platform.h>
@@ -37,7 +38,7 @@
 
 #define SZ_4G 0xF0000000
 
-#ifdef CONFIG_QCOM_IOMMU
+#ifdef CONFIG_QCOM_IOMMU_V1
 #include <linux/qcom_iommu.h>
 static inline struct bus_type *mdss_mmu_get_bus(struct device *dev)
 {
