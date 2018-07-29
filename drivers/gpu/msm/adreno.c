@@ -1658,7 +1658,7 @@ static int adreno_init(struct kgsl_device *device)
 	 * those targets that have the always on timer
 	 */
 
-	if (!adreno_is_a3xx(adreno_dev)) {
+	if (!(adreno_is_a3xx(adreno_dev) || adreno_is_a4xx(adreno_dev))) {
 		int r = kgsl_allocate_global(device,
 			&adreno_dev->profile_buffer, PAGE_SIZE,
 			0, 0, "alwayson");
