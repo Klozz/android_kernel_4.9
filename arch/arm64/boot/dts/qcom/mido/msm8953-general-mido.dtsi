@@ -484,15 +484,6 @@
 					0x00 0x18>;
 };
 
-
-&pm8953_diangu_dig {
-	status = "ok";
-};
-
-&pm8953_diangu_analog {
-	status = "ok";
-};
-
 &ext_codec {
 	status = "disabled";
 };
