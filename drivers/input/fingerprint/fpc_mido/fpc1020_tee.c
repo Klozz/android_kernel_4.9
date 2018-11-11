@@ -541,7 +541,7 @@ static int fpc1020_probe(struct platform_device *pdev)
 
 	mutex_init(&fpc1020->lock);
 
-	akeup_source_init(&fpc1020->ttw_wl, "fpc_ttw_wl");
+	wakeup_source_init(&fpc1020->ttw_wl, "fpc_ttw_wl");
 
 	rc = sysfs_create_group(&dev->kobj, &attribute_group);
 	if (rc) {
