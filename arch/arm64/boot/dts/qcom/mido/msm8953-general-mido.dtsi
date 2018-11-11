@@ -66,19 +66,6 @@
 			qcom,use-sc-irq;
 		};
 
- 		labibb: qpnp-labibb-regulator {
-			status = "ok";
- 			ibb_regulator: qcom,ibb@dc00 {
-				/delete-property/
-					qcom,qpnp-ibb-use-default-voltage;
-				qcom,qpnp-ibb-init-lcd-voltage = <5700000>;
-			};
- 			lab_regulator: qcom,lab@de00 {
-				/delete-property/
-					qcom,qpnp-ibb-use-default-voltage;
-				qcom,qpnp-ibb-init-lcd-voltage = <5700000>;
-			};
-		};
 	};
 };
 
@@ -328,6 +315,7 @@
         };
 
 	i2c@78b7000 {
+		status = "okay";
                 focaltech@38 {
                         compatible = "focaltech,5435";
                         reg = <0x38>;
