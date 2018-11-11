@@ -116,15 +116,18 @@
 				mux {
 					pins = "gpio61";
 				};
- 				config {
+
+				config {
 					pins = "gpio61";
 				};
 			};
- 			mdss_dsi_suspend: mdss_dsi_suspend {
+
+			mdss_dsi_suspend: mdss_dsi_suspend {
 				mux {
 					pins = "gpio61";
 				};
- 				config {
+
+				config {
 					pins = "gpio61";
 				};
 			};
@@ -132,4 +135,3 @@
 	};
 
 };
-
