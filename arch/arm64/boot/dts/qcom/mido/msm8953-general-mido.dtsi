@@ -90,9 +90,8 @@
 	};
 };
 
-/*
 / {
-	qpnp_smbcharger: qcom,qpnp-smbcharger {
+	pmi8950_charger: qcom,qpnp-smbcharger {
 		qcom,float-voltage-mv = <4400>;
 		qcom,resume-delta-mv = <50>;
 		qcom,charge-unknown-battery;
@@ -110,7 +109,7 @@
 		/delete-property/ qcom,autoadjust-vfloat;
 	};
 
-	qpnp_fg: qcom,fg {
+	pmi8950_fg: qcom,fg {
 		qcom,resume-soc = <99>;
 		qcom,fg-cutoff-voltage-mv = <3400>;
 		qcom,fg-cc-cv-threshold-mv = <4380>;
@@ -121,7 +120,7 @@
 		qcom,warm-bat-decidegc = <450>;
 		qcom,fg-restore-batt-info;
 	};
-};*/
+};
 
 &pmi8950_pwm {
 	status = "okay";
