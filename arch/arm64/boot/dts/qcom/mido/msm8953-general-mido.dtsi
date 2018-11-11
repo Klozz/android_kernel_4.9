@@ -78,15 +78,16 @@
 	};
 };
 
-&qrd_batterydata {
-	qcom,batt-id-range-pct = <5>;
-	#include "batterydata-qrd-sunwoda-4v4-4100mah.dtsi"
-	#include "batterydata-qrd-sunwoda-ATL-4v4-4100mah.dtsi"
-	#include "batterydata-qrd-coslight-4v4-4100mah.dtsi"
-	#include "batterydata-qrd-desay-lisheng-4v4-4100mah.dtsi"
-	#include "batterydata-qrd-desay-4v4-4100mah.dtsi"
-	/delete-node/ qcom,qrd_msm8937_sku1_2920mah;
-
+/ {
+	qrd_batterydata: qcom,battery-data {
+		qcom,batt-id-range-pct = <5>;
+		#include "batterydata-qrd-sunwoda-4v4-4100mah.dtsi"
+		#include "batterydata-qrd-sunwoda-ATL-4v4-4100mah.dtsi"
+		#include "batterydata-qrd-coslight-4v4-4100mah.dtsi"
+		#include "batterydata-qrd-desay-lisheng-4v4-4100mah.dtsi"
+		#include "batterydata-qrd-desay-4v4-4100mah.dtsi"
+		/delete-node/ qcom,qrd_msm8937_sku1_2920mah;
+	};
 };
 
 
@@ -482,15 +483,6 @@
 					0x00 0x90
 					0x9F 0x1C
 					0x00 0x18>;
-};
-
-
-&pm8953_diangu_dig {
-	status = "ok";
-};
-
-&pm8953_diangu_analog {
-	status = "ok";
 };
 
 &ext_codec {
