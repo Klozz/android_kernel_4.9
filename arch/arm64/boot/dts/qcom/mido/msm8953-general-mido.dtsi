@@ -535,6 +535,7 @@
 	status = "disabled";
 };
 
+
 &firmware {
 	android {
 		fstab {
