@@ -75,7 +75,8 @@
 &mdss_mdp {
 	qcom,mdss-pref-prim-intf = "dsi";
 };
- &mdss_dsi {
+
+&mdss_dsi {
 	hw-config = "single_dsi";
 };
 
