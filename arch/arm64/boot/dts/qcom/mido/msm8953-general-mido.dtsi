@@ -13,7 +13,7 @@
 &spmi_bus {
 	qcom,pm8953@0 {
 		qcom,power-on@800 {
-                       qcom,store-hard-reset-reason;
+                       /delete-property/ qcom,store-hard-reset-reason;
 			qcom,pon_1 {
 				qcom,support-reset = <1>;
 				qcom,s1-timer = <6720>;
