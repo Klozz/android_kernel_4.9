@@ -15,7 +15,6 @@
 
 #include "msm8953.dtsi"
 #include "pmi8950.dtsi"
-#include "msm8953-pmi8950.dtsi"
 #include "msm8953-mdss.dtsi"
 
 / {
