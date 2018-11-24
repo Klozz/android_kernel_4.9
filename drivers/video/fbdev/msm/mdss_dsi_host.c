@@ -1292,17 +1292,17 @@ static u32 te_count_old = 1;
 
 int mdss_dsi_TE_NT35596_check (struct mdss_dsi_ctrl_pdata *ctrl_pdata)
 {
+
 	int ret = 1;
-
 	if (te_count_old != te_count) {
-
 		te_count_old = te_count;
 	} else {
 		ret = 0;
 		pr_err("liujia te_count doesnt add as time");
 	}
-	if (te_count >= 10000)
+	if (te_count >= 10000) {
 		te_count = 0;
+	}
 
 	return ret;
 

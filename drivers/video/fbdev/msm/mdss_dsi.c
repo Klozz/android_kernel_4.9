@@ -973,6 +973,7 @@ static ssize_t mdss_dsi_cmd_read(struct file *file, char __user *buf,
 
 		buffer = kmalloc(bsize, GFP_KERNEL);
 		if (!buffer) {
+			pr_err("%s: Failed to allocate memory\n", __func__);
 			mutex_unlock(&pcmds->dbg_mutex);
 			return -ENOMEM;
 		}
@@ -3038,6 +3039,7 @@ static struct device_node *mdss_dsi_find_panel_of_node(
 		}
 		pr_info("%s: cmdline:%s panel_name:%s\n",
 			__func__, panel_cfg, panel_name);
+		hq_regiser_hw_info(HWID_LCM, panel_name);
 		if (!strcmp(panel_name, NONE_PANEL))
 			goto exit;
 
@@ -3054,6 +3056,10 @@ static struct device_node *mdss_dsi_find_panel_of_node(
 		} else if (!strcmp(panel_name, "qcom,mdss_dsi_ili9885_boe_fhd_video"))
 			panel_suspend_reset_flag = 4;
 #endif
+
+
+		pr_err("Klozz print panel name = %d\n",
+				panel_suspend_reset_flag);
 
 		mdss_node = of_parse_phandle(pdev->dev.of_node,
 			"qcom,mdss-mdp", 0);
