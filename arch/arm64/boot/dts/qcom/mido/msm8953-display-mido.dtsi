@@ -107,6 +107,10 @@
 
 };
 
+&dsi_r69006_1080p_cmd {
+	qcom,esd-check-enabled;
+};
+
 &mdss_mdp {
 	qcom,mdss-pref-prim-intf = "dsi";
 };
@@ -132,6 +136,11 @@
 	status = "disabled";
 };
 
+&labibb {
+	status = "ok";
+	qpnp,qpnp-labibb-mode = "lcd";
+};
+
 &mdss_dsi0_pll {
         /delete-property/ qcom,dsi-pll-ssc-en;
         /delete-property/ qcom,dsi-pll-ssc-mode;
@@ -144,12 +153,12 @@
 
 &mdss_te_active {
         mux {
-                function = "gpio";
+                function = "gpio61";
         };
 };
 
 &mdss_te_suspend {
         mux {
-                function = "gpio";
+                function = "gpio61";
         };
 };
