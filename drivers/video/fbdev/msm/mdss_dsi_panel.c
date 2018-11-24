@@ -909,10 +909,6 @@ static void mdss_dsi_panel_on_hdmi(struct mdss_dsi_ctrl_pdata *ctrl,
 }
 #endif
 
-#ifdef CONFIG_MACH_XIAOMI_MIDO
-extern char panel_name[MDSS_MAX_PANEL_LEN];
-#endif
-
 static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 {
 	struct mdss_dsi_ctrl_pdata *ctrl = NULL;
@@ -920,6 +916,7 @@ static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 	struct dsi_panel_cmds *on_cmds;
 	int ret = 0;
 #ifdef CONFIG_MACH_XIAOMI_MIDO
+	char panel_name[MDSS_MAX_PANEL_LEN];
 	struct dsi_panel_cmds *CABC_on_cmds_point;
 	struct dsi_panel_cmds *CABC_off_cmds_point;
 	struct dsi_panel_cmds *CE_on_cmds_point;

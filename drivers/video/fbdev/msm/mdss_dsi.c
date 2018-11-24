@@ -28,7 +28,9 @@
 #include <linux/pm_qos.h>
 #include <linux/mdss_io_util.h>
 #include <linux/dma-buf.h>
-
+#ifdef CONFIG_MACH_XIAOMI_MIDO
+#include <linux/hqsysfs.h>
+#endif
 #include "mdss.h"
 #include "mdss_panel.h"
 #include "mdss_dsi.h"

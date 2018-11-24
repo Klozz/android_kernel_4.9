@@ -51,6 +51,7 @@
 #endif
 #ifdef CONFIG_MACH_XIAOMI_MIDO
 #include "mdss_dsi.h"
+#include <linux/stat.h>
 extern struct mdss_dsi_ctrl_pdata *change_par_ctrl ;
 extern int change_par_buf;
 extern int LCM_effect[3];
@@ -810,11 +811,10 @@ static int mdss_fb_blanking_mode_switch(struct msm_fb_data_type *mfd, int mode)
 	return 0;
 }
 #ifdef CONFIG_MACH_XIAOMI_MIDO
-
-extern char panel_name[MDSS_MAX_PANEL_LEN];
 static ssize_t mdss_fb_change_dispparam(struct device *dev,
 	struct device_attribute *attr, const char *buf, size_t len)
 {
+	char panel_name[MDSS_MAX_PANEL_LEN];
 	struct dsi_panel_cmds *CABC_on_cmds_point;
 	struct dsi_panel_cmds *CABC_off_cmds_point;
 	struct dsi_panel_cmds *CE_on_cmds_point;
@@ -830,6 +830,7 @@ static ssize_t mdss_fb_change_dispparam(struct device *dev,
 	struct dsi_panel_cmds *PM6_cmds_point;
 	struct dsi_panel_cmds *PM7_cmds_point;
 	struct dsi_panel_cmds *PM8_cmds_point;
+
 	struct dsi_panel_cmds *CABC_on_fb_cmds_point;
 	struct dsi_panel_cmds *CE_on_fb_cmds_point;
 	struct dsi_panel_cmds *cold_gamma_fb_cmds_point;
@@ -844,7 +845,6 @@ static ssize_t mdss_fb_change_dispparam(struct device *dev,
 	cold_gamma_cmds_point = &change_par_ctrl->cold_gamma_cmds;
 	warm_gamma_cmds_point = &change_par_ctrl->warm_gamma_cmds;
 	default_gamma_cmds_point = &change_par_ctrl->default_gamma_cmds;
-
 	PM1_cmds_point = &change_par_ctrl->PM1_cmds;
 	PM2_cmds_point = &change_par_ctrl->PM2_cmds;
 	PM3_cmds_point = &change_par_ctrl->PM3_cmds;
