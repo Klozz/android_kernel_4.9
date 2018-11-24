@@ -1,4 +1,5 @@
 /* Copyright (c) 2012-2015, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2018 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -45,16 +46,24 @@
 				29 01 00 00 00 00 02 ff 01
 				29 01 00 00 00 00 02 fb 01
 				29 01 00 00 00 00 02 72 21
+
 				29 01 00 00 00 00 02 FF 05
 				29 01 00 00 00 00 02 Fb 01
 				29 01 00 00 00 00 02 e7 80
+
 				29 01 00 00 00 00 02 FF 00
 				29 01 00 00 78 00 02 11 00
 				29 01 00 00 14 00 02 29 00];
 		qcom,mdss-dsi-off-command = [05 01 00 00 14 00 02 28 00
 				05 01 00 00 78 00 02 10 00];
+		qcom,mdss-dsi-CABC_on-command = [29 01 00 00 01 00 02 ff 00
+				29 01 00 00 00 00 02 55 01];
+		qcom,mdss-dsi-CABC_off-command = [29 01 00 00 01 00 02 ff 00
+				29 01 00 00 00 00 02 55 00];
 		qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
 		qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
+		qcom,mdss-dsi-CABC_on-command-state = "dsi_hs_mode";
+		qcom,mdss-dsi-CABC_off-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-h-sync-pulse = <1>;
 		qcom,mdss-dsi-traffic-mode = "burst_mode"; //burst_mode  non_burst_sync_event
 		qcom,mdss-dsi-bllp-eof-power-mode;
@@ -63,6 +72,7 @@
 		qcom,mdss-dsi-lane-1-state;
 		qcom,mdss-dsi-lane-2-state;
 		qcom,mdss-dsi-lane-3-state;
+
 		qcom,mdss-dsi-t-clk-post = <0x0d>;
 		qcom,mdss-dsi-t-clk-pre = <0x30>;
 		qcom,mdss-dsi-bl-min-level = <1>;
@@ -85,3 +95,4 @@
 		qcom,mdss-pan-physical-height-dimension = <122>;
 	};
 };
+
